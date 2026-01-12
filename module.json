@@ -24,7 +24,7 @@
 	"styles": [
 		"./css/swia.css"
 	],
-	"url": "",
-	"manifest": "",
-	"download": ""
+	"url": "https://github.com/casegib/swia-dice",
+	"manifest": "https://raw.githubusercontent.com/casegib/swia-dice/master/module.json",
+	"download": "https://github.com/casegib/swia-dice/releases/download/v0.0.1/swia-dice.zip"
 }
