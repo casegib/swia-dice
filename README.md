@@ -17,7 +17,7 @@ A Foundry Virtual Tabletop module that adds the ability to roll Star Wars Imperi
 
 1. Install the Dice So Nice! module first
 2. Install this module by:
-   - Using the module browser in Foundry VTT - manifest link: `https://raw.githubusercontent.com/casegib/swia-dice/master/module.json`
+   - Using the module browser in Foundry VTT - manifest link: `https://raw.githubusercontent.com/casegib/swia-dice/main/module.json`
    - Or manually copying this module to your `modules` folder
 
 ## Usage
