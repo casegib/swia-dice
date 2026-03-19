@@ -1,6 +1,9 @@
 import {DiceSystem} from '../../dice-so-nice/api.js';
 import {swiab, swiaw, swian, swiag, swiar, swiay } from './die.js';
 
+// Keep 3D Dice So Nice presets enabled while chat face rendering is protected separately.
+const SWIA_CHAT_ONLY_MODE = false;
+
 Hooks.once("init", async function () {
     CONFIG.Dice.terms["b"] = swiab;
     CONFIG.Dice.terms["w"] = swiaw;
@@ -58,7 +61,43 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
 //     }
 });
 
+Hooks.on('renderChatMessage', (_message, html) => {
+  const images = html.find('img.swia-die-result');
+  if (!images.length) return;
+
+  images.each((_index, image) => {
+    image.style.filter = 'none';
+    image.style.mixBlendMode = 'normal';
+    image.style.opacity = '1';
+    image.style.transform = 'none';
+    image.style.background = 'transparent';
+    image.style.border = '0';
+    image.style.boxShadow = 'none';
+
+    const roll = image.closest('.roll');
+    if (roll) {
+      roll.style.filter = 'none';
+      roll.style.mixBlendMode = 'normal';
+      roll.style.background = 'transparent';
+      roll.style.border = '0';
+      roll.style.boxShadow = 'none';
+      roll.style.textShadow = 'none';
+    }
+
+    const rolls = image.closest('.dice-rolls');
+    if (rolls) {
+      rolls.style.filter = 'none';
+      rolls.style.mixBlendMode = 'normal';
+    }
+  });
+});
+
 Hooks.once('diceSoNiceReady', (dice3d) => {
+  if (SWIA_CHAT_ONLY_MODE) {
+    console.info('SWIA Dice | Chat-only mode enabled. Skipping Dice So Nice system and preset registration.');
+    return;
+  }
+
     const system = new DiceSystem("swia", "Star Wars Imperial Assault", "default");
     dice3d.addSystem(system);
     dice3d.addDicePreset({

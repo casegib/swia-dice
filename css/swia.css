@@ -1,3 +1,34 @@
 .dice-tooltip{
     display:block !important;
 }
+
+.dice-tooltip .dice-rolls img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.dice-tooltip .dice-rolls img.swia-die-result {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+    transform: none !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    isolation: isolate;
+}
+
+.dice-tooltip .dice-rolls,
+.dice-tooltip .dice-rolls .roll,
+.dice-tooltip .dice-rolls li {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+.dice-tooltip .dice-rolls .roll {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
