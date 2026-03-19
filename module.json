@@ -2,7 +2,7 @@
 	"id": "swia-dice",
 	"title": "Star Wars Imperial Assault Dice Roller",
 	"description": "Adds the ability to roll Imperial Assault dice using the Dice So Nice! module.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"compatibility": {
 		"minimum": "11",
 		"verified": "13.350"
