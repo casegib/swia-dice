@@ -84,6 +84,7 @@ Hooks.on('renderChatMessage', (_message, html) => {
       roll.style.textShadow = 'none';
     }
 
+    
     const rolls = image.closest('.dice-rolls');
     if (rolls) {
       rolls.style.filter = 'none';

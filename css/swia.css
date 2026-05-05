@@ -32,3 +32,7 @@
     box-shadow: none !important;
     text-shadow: none !important;
 }
+
+.dice-roll .dice-total {
+    display: none !important;
+}
