@@ -65,6 +65,18 @@ Hooks.on('renderChatMessage', (_message, html) => {
   const images = html.find('img.swia-die-result');
   if (!images.length) return;
 
+  // Replace each .dice-total with the face labels for that dice group
+  html.find('.dice-roll').each((_i, diceRoll) => {
+    const faces = diceRoll.querySelectorAll('.swia-die-face[data-label]');
+    if (!faces.length) return;
+    const labels = Array.from(faces).map(s => s.dataset.label);
+    const total = diceRoll.querySelector('.dice-total');
+    if (total) {
+      total.style.display = '';
+      total.innerHTML = `<span style="font-size:11px;font-weight:bold;">${labels.join(', ')}</span>`;
+    }
+  });
+
   images.each((_index, image) => {
     image.style.filter = 'none';
     image.style.mixBlendMode = 'normal';

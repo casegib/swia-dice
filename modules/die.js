@@ -1,5 +1,5 @@
 const resultImage = (src, label) =>
-    `<div class="swia-die-face" style="display:flex;flex-direction:column;align-items:center;gap:2px;"><img class="swia-die-result" src="${src}" style="width:32px;height:32px;object-fit:contain;filter:none !important;mix-blend-mode:normal !important;opacity:1 !important;transform:none !important;background:transparent !important;border:0 !important;box-shadow:none !important;" /><span style="font-size:11px;font-weight:bold;color:#222;text-align:center;line-height:1.2;text-shadow:0 0 3px #fff;">${label}</span></div>`;
+    `<div class="swia-die-face" data-label="${label}" style="display:flex;flex-direction:column;align-items:center;"><img class="swia-die-result" src="${src}" style="width:32px;height:32px;object-fit:contain;filter:none !important;mix-blend-mode:normal !important;opacity:1 !important;transform:none !important;background:transparent !important;border:0 !important;box-shadow:none !important;" /></div>`;
 
 export class swiab extends Die {
     constructor(termData) {
